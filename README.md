@@ -48,7 +48,7 @@ python modulation_CResMD.py -opt options/test/modulation_CResMD.yml
 ## How to Train
 
 ### CResMD
-1. Prepare datasets, usually the DIV2K dataset.
+1. Prepare datasets, usually the DIV2K dataset. More details are in [`codes/data`](codes/data).
 1. Modify the configuration file [`options/train/train_CResMD.yml`](codes/options/train/train_CResMD.yml)
 1. Run command:
 ```c++
