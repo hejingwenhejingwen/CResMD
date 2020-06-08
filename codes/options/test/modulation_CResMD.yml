@@ -4,8 +4,8 @@ model: sr
 distortion: sr
 scale: 1
 cond_init: [0.0, 0.6] # starting point of modulation
-modulation_dim: 0 # the dim for modulation (e.g. 0 for deblurring, 1 for denoising)
-modulation_stride: 0.1 
+modulation_dim: 0 # dim for modulation (e.g. 0 for deblurring, 1 for denoising)
+modulation_stride: 0.1 # stride for modulation: 0.1, 0.05, 0.01...
 gpu_ids: [0]
 
 datasets:

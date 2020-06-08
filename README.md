@@ -37,24 +37,24 @@ Demo video of two-dimension modulation.
   - PyTorch == 1.0: `pip install tensorboardX`
 
 
-## Modulation
+## Modulation CResMD
 
-1. Modify the configuration file [`options/test/modulation_CResMD.yml`](codes/options/test/modulation_CResMD.yml) 
+1. (optional) Modify the configuration file [`options/test/modulation_CResMD.yml`](codes/options/test/modulation_CResMD.yml) 
 1. Run command:
 ```c++
+cd codes
 python modulation_CResMD.py -opt options/test/modulation_CResMD.yml
 ```
 
-## Test
+## Test CResMD
 
-### CResMD
-1. Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml)
+1. (optional) Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml)
 1. Run command:
 ```c++
 python test.py -opt options/test/test_CResMD.yml
 ```
 
-### base network
+## Test base network
 1. Modify the configuration file [`options/test/test_Base.yml`](codes/options/test/test_Base.yml)
 1. Run command:
 ```c++
@@ -81,4 +81,4 @@ python train.py -opt options/train/train_Base.yml
 
 ## Acknowledgement
 
-- This code is based on [mmsr].
+- This code is based on [mmsr](https://github.com/open-mmlab/mmsr).
