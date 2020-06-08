@@ -47,9 +47,16 @@ for test_loader in test_loaders:
     test_results['psnr_y'] = []
     test_results['ssim_y'] = []
 
+    cond = test_loader.dataset.opt['cond']
     for data in test_loader:
         need_GT = False if test_loader.dataset.opt['dataroot_GT'] is None else True
-        need_cond = True if data.get('cond', None) is not None else False
+
+        if cond is not None:
+            data['cond'] = torch.Tensor(cond).view(1, 2)
+            need_cond = True
+        else:
+            need_cond = False
+            
         model.feed_data(data, need_GT=need_GT, need_cond=need_cond)
 
         img_path = data['LQ_path'][0]

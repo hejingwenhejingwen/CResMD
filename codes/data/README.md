@@ -11,7 +11,7 @@ Dataloader
 1. We use DIV2K dataset for training. 
     1. since DIV2K images are large, we first crop them to sub images using [`codes/data_scripts/extract_subimages.py`](../data_scripts/extract_subimages.py). 
     1. generate LQ images using matlab with [`codes/data_scripts/generate_2groups.m`](../data_scripts/generate_2groups.m) for CResMD, [`codes/data_scripts/generate_deg.m`](../data_scripts/generate_deg.m) for base network. If you already have LQ images, you can skip this step. Please make sure the LQ and GT folders have the same number of images.
-    1. generate .lmdb file if needed using [`codes/data_scripts/create_lmdb.py`](../data_scripts/create_lmdb.py).
+    1. (optional) generate .lmdb file if needed using [`codes/data_scripts/create_lmdb.py`](../data_scripts/create_lmdb.py).
     1. modify configurations in `options/train/xxx.yml` when training, e.g., `dataroot_GT`, `dataroot_LQ`.
 
 

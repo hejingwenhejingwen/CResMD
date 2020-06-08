@@ -45,6 +45,22 @@ Demo video of two-dimension modulation.
 python modulation_CResMD.py -opt options/test/modulation_CResMD.yml
 ```
 
+## Test
+
+### CResMD
+1. Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml)
+1. Run command:
+```c++
+python test.py -opt options/test/test_CResMD.yml
+```
+
+### base network
+1. Modify the configuration file [`options/test/test_Base.yml`](codes/options/test/test_Base.yml)
+1. Run command:
+```c++
+python test.py -opt options/test/test_Base.yml
+```
+
 ## How to Train
 
 ### CResMD
@@ -61,22 +77,6 @@ python train_CResMD.py -opt options/train/train_CResMD.yml
 1. Run command: 
 ```c++
 python train.py -opt options/train/train_Base.yml
-```
-
-## How to Test
-
-### CResMD
-1. Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml) (please refer to [`options`](codes/options) for instructions.)
-1. Run command:
-```c++
-python test.py -opt options/test/test_CResMD.yml
-```
-
-### base network
-1. Modify the configuration file [`options/test/test_Base.yml`](codes/options/test/test_Base.yml) (please refer to [`options`](codes/options) for instructions.)
-1. Run command:
-```c++
-python test.py -opt options/test/test_Base.yml
 ```
 
 ## Acknowledgement
