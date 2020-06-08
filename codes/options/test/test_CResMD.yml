@@ -7,14 +7,14 @@ gpu_ids: [0]
 
 datasets:
   test_1:  # the 1st test dataset
-    name: blur20_noise30
+    name: 0506_blur20_noise30
     mode: LQGT
     cond: [0.5, 0.6]  # please specify the condition vector
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur20_noise30
 
   test_2:  # the 2st test dataset
-    name: blur20_noise30
+    name: 0006_blur20_noise30
     mode: LQGT
     cond: [0., 0.6]  # please specify the condition vector
     dataroot_GT: ../datasets/val/blur0_noise0

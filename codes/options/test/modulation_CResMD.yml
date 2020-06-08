@@ -10,7 +10,7 @@ gpu_ids: [0]
 
 datasets:
   test_1:  # the 1st test dataset
-    name: Set14_blur2_noise30
+    name: blur2_noise30
     mode: LQGT
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur20_noise30
