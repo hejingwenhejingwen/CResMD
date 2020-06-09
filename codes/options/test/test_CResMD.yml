@@ -13,10 +13,16 @@ datasets:
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur20_noise30
 
-  test_2:  # the 2st test dataset
+  test_2:  # the 2nd test dataset
     name: 0006_blur20_noise30
     mode: LQGT
     cond: [0., 0.6]  # denoising only 
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur20_noise30
+
+  test_3:  # the 3rd test dataset
+    name: blur20_noise30
+    mode: LQGT_cond # automatically read "cond" from image name
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur20_noise30
 

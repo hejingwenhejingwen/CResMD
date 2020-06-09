@@ -1,5 +1,5 @@
 #### general settings
-name: debug_beta_0510_blur0040_noise0050 # remove the "debug" for normal training
+name: beta_0510_blur0040_noise0050 # remove the "debug" for normal training
 use_tb_logger: true
 model: sr
 distortion: sr
@@ -12,7 +12,7 @@ datasets:
     name: DIV2K
     mode: LQGT_cond
     dataroot_GT: ../datasets/DIV2K_sub
-    dataroot_LQ: ../datasets/DIV2K_beta_0510_k04_noise0050_41x51
+    dataroot_LQ: ../datasets/DIV2K_beta_0510_2group_k04_noise0050_41x51
 
     use_shuffle: true
     n_workers: 6  # per GPU
@@ -25,44 +25,44 @@ datasets:
   val0:
     name: blur0_noise0
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur0_noise0
 
   val1:
     name: blur0_noise15
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur0_noise15
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur0_noise15
 
   val2:
     name: blur0_noise50
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur0_noise50
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur0_noise50
 
   val3:
     name: blur10_noise0
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur10_noise0
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur10_noise0
 
   val4:
     name: blur40_noise0
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur40_noise0
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur40_noise0
 
   val5:
     name: blur10_noise15
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur10_noise15
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur10_noise15
 
   val6:
     name: blur40_noise50
     mode: LQGT_cond
-    dataroot_GT: ../datasets/val/Set14_k0040_noise0050/blur0_noise0
-    dataroot_LQ: ../datasets/val/Set14_k0040_noise0050/blur40_noise50
+    dataroot_GT: ../datasets/val/blur0_noise0
+    dataroot_LQ: ../datasets/val/blur40_noise50
 
 #### network structures
 network_G:

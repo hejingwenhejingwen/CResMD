@@ -1,7 +1,7 @@
 function generate_mod_LR_bic()
 
-input_path = 'DIV2K_sub';
-save_LR_path = 'DIV2K_k2_noise30';
+input_path = '../../datasets/DIV2K_sub';
+save_LR_path = '../../datasets/DIV2K_k2_noise30';
 
 file_type = '.png';
 
