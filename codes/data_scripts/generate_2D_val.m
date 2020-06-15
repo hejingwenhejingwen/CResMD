@@ -1,8 +1,8 @@
 function generate_mod_LR_bic()
 
+% put test data here
 input_path = '../../datasets/CBSD68';
-
-save_LR_root = '../../datasets/CBSD68_val';
+save_LR_root = '../../datasets/CBSD68_2D_val';
 
 file_type = '.png';
 

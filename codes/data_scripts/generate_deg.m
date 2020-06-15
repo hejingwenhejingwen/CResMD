@@ -1,5 +1,6 @@
 function generate_mod_LR_bic()
 
+% put training data here
 input_path = '../../datasets/DIV2K_sub';
 save_LR_path = '../../datasets/DIV2K_k2_noise30';
 

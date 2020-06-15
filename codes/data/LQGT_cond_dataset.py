@@ -64,10 +64,17 @@ class LQGT_cond_Dataset(data.Dataset):
         # get condition vector
         LQ_name = os.path.basename(LQ_path)
         cond_str = re.split(r"[_,.]", LQ_name)[-2]
-        cond0 = int(cond_str[0:2]) / 40.
-        cond1 = int(cond_str[2:4]) / 50.
 
-        cond_list = [cond0, cond1]
+        cond_len = len(cond_str)//2
+        if cond_len == 2:
+            cond_num_list = [40., 50.]
+        elif cond_len == 3:
+            cond_num_list = [40., 50., 92.]
+
+        cond_list = []
+        for ind in range(cond_len):
+            cond = int(cond_str[ind*2: (ind+1)*2]) / cond_num_list[ind]
+            cond_list.append(cond)
 
         # modcrop in the validation / test phase
         if self.opt['phase'] != 'train':
