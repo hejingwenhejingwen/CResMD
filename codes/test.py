@@ -54,6 +54,8 @@ for test_loader in test_loaders:
         if cond is not None:
             data['cond'] = torch.Tensor(cond).view(1, 2)
             need_cond = True
+        elif data['cond'] is not None:
+            need_cond = True
         else:
             need_cond = False
             
