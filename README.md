@@ -1,7 +1,7 @@
 # CResMD
 
-### Multi-Dimension Modulation for Image Restoration with Dynamic Controllable Residual Learning
-By Jingwen He, [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=en), and [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)
+### Interactive Multi-Dimension Modulation with Dynamic Controllable Residual Learning for Image Restoration [Paper](http://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123650052.pdf)
+By Jingwen He*, [Chao Dong*](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=en), and [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/) (* indicates equal contribution)
 
 <p align="center"> 
   
