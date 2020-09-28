@@ -33,7 +33,7 @@ for phase, dataset_opt in sorted(opt['datasets'].items()):
     test_loaders.append(test_loader)
 
 model = create_model(opt)
-stride = opt['interpolation_stride'] if opt['interpolation_stride'] is not None else 0.1
+stride = opt['modulation_stride'] if opt['modulation_stride'] is not None else 0.1
 cond = opt['cond_init']
 mod_dim = opt['modulation_dim']
 start_point = cond[mod_dim]
@@ -56,7 +56,7 @@ for test_loader in test_loaders:
 
         for data in test_loader:
             cond[mod_dim] = coef
-            data['cond'] = torch.Tensor(cond).view(1, 2)
+            data['cond'] = torch.Tensor(cond).view(1, -1)
             model.feed_data(data, need_GT=need_GT, need_cond=True)
             img_path = data['LQ_path'][0]
             img_name = osp.splitext(osp.basename(img_path))[0]

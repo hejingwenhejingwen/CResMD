@@ -65,14 +65,10 @@ class LQGT_cond_Dataset(data.Dataset):
         LQ_name = os.path.basename(LQ_path)
         cond_str = re.split(r"[_,.]", LQ_name)[-2]
 
-        cond_len = len(cond_str)//2
-        if cond_len == 2:
-            cond_num_list = [40., 50.]
-        elif cond_len == 3:
-            cond_num_list = [40., 50., 92.]
+        cond_num_list = self.opt['cond_norm']
 
         cond_list = []
-        for ind in range(cond_len):
+        for ind in range(len(cond_num_list)):
             cond = int(cond_str[ind*2: (ind+1)*2]) / cond_num_list[ind]
             cond_list.append(cond)
 

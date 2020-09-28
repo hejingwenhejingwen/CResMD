@@ -102,6 +102,12 @@ class SRModel(BaseModel):
     def optimize_parameters(self, step):
         self.optimizer_G.zero_grad()
         self.fake_H = self.netG(self.input)
+
+        # weight = 1.1 - self.cond
+        # re_weight = torch.mean(weight, dim=1)
+        # l_pix = re_weight.view(-1, 1, 1, 1) * self.cri_pix(self.fake_H, self.real_H)
+        # l_pix = l_pix.mean()
+
         l_pix = self.l_pix_w * self.cri_pix(self.fake_H, self.real_H)
         l_pix.backward()
         self.optimizer_G.step()

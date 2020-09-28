@@ -48,13 +48,16 @@ for test_loader in test_loaders:
     test_results['ssim_y'] = []
 
     cond = test_loader.dataset.opt['cond']
+    cond_norm = test_loader.dataset.opt['cond_norm']
     for data in test_loader:
         need_GT = False if test_loader.dataset.opt['dataroot_GT'] is None else True
 
         if cond is not None:
-            data['cond'] = torch.Tensor(cond).view(1, 2)
+            for i in range(len(cond)):
+                cond[i] = cond[i] / cond_norm[i]
+            data['cond'] = torch.Tensor(cond).view(1, -1)
             need_cond = True
-        elif data['cond'] is not None:
+        elif test_loader.dataset.opt['mode'] in ['LQGT_cond']:
             need_cond = True
         else:
             need_cond = False

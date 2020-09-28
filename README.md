@@ -40,10 +40,14 @@ Demo video of two-dimension modulation.
 ## How to Test
 - **Prepare the test dataset**
 	1. Download LIVE1 dataset and CBSD68 dataset from [Google Drive](https://drive.google.com/drive/folders/1-ye2s6og03jHh5A0cjtINpOUickJEra0?usp=sharing)
-	1. Generate LQ images with different combinations of degradations using matlab [`codes/data_scripts/generate_2D_val.m`](codes/data_scripts/generate_2D_val.m).
+	1. Generate LQ images with different combinations of degradations using matlab [`codes/data_scripts/generate_2D_val.m`](codes/data_scripts/generate_2D_val.m), [`codes/data_scripts/generate_3D_val.m`](codes/data_scripts/generate_3D_val.m).
 
 - **Modulation Testing**
-	1. (optional) Modify the configuration file [`options/test/modulation_CResMD.yml`](codes/options/test/modulation_CResMD.yml). e.g., `dataroot_GT`, `dataroot_LQ`.
+	1. (optional) Modify the configuration file [`options/test/modulation_CResMD.yml`](codes/options/test/modulation_CResMD.yml). 
+	- `dataroot_GT`, `dataroot_LQ`, `pretrain_model_G`.
+	- `cond_init`: The starting point of modulation, usually set to [0, 0].
+	- `modulation_dim`: The dimension you would like to modulate.
+	- `modulation_stride`: The stride for modulation process, usually set to 0.1.
 	1. Run command:
 	```c++
 	cd codes
@@ -51,7 +55,10 @@ Demo video of two-dimension modulation.
 	```
 
 - **Test CResMD**
-	1. (optional) Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml). e.g., `dataroot_GT`, `dataroot_LQ`.
+	1. (optional) Modify the configuration file [`options/test/test_CResMD.yml`](codes/options/test/test_CResMD.yml). 
+	- `dataroot_GT`, `dataroot_LQ`
+	- `cond_norm` (This paper uses [40, 50] for 2D modulation, [40, 50, 92] for 3D modulation).
+	- `mode` (LQGT or LQGT_cond. if it is set to LQGT, you should specify `cond`, which is the degradation levels.)
 	1. Run command:
 	```c++
 	python test.py -opt options/test/test_CResMD.yml
@@ -68,6 +75,8 @@ Demo video of two-dimension modulation.
 - **CResMD**
 	1. Prepare datasets, usually the DIV2K dataset. More details are in [`codes/data`](codes/data).
 	1. Modify the configuration file [`options/train/train_CResMD.yml`](codes/options/train/train_CResMD.yml)
+	- `dataroot_GT`, `dataroot_LQ`
+	- `cond_norm` (This paper uses [40, 50] for 2D modulation, [40, 50, 92] for 3D modulation).
 	1. Run command:
 	```c++
 	python train_CResMD.py -opt options/train/train_CResMD.yml

@@ -11,6 +11,8 @@ datasets:
   train:
     name: DIV2K
     mode: LQGT_cond
+    cond_norm: [40, 50]
+#    cond_norm: [40, 50, 92]  # for 3D modulation
     dataroot_GT: ../datasets/DIV2K_sub
     #### 2D ####
     dataroot_LQ: ../datasets/DIV2K_beta_0510_2group_k04_noise0050_41x51 
@@ -31,101 +33,117 @@ datasets:
   val0:
     name: blur0_noise0
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur0_noise0
 
   val1:
     name: blur0_noise15
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur0_noise15
 
   val2:
     name: blur0_noise50
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur0_noise50
 
   val3:
     name: blur10_noise0
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur10_noise0
 
   val4:
     name: blur40_noise0
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur40_noise0
 
   val5:
     name: blur10_noise15
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur10_noise15
 
   val6:
     name: blur40_noise50
     mode: LQGT_cond
+    cond_norm: [40, 50]
     dataroot_GT: ../datasets/val/blur0_noise0
     dataroot_LQ: ../datasets/val/blur40_noise50
 
 ####################### 
 #### 3D validation #### 
 ####################### 
-  # val0:
-  #   name: blur0_noise0_jpeg102
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur0_noise0_jpeg102
-
-  # val1:
-  #   name: blur0_noise0_jpeg80
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur0_noise0_jpeg80
-
-  # val2:
-  #   name: blur0_noise0_jpeg10
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur0_noise0_jpeg10
-
-  # val3:
-  #   name: blur0_noise15_jpeg102
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur0_noise15_jpeg102
-
-  # val4:
-  #   name: blur0_noise50_jpeg102
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur0_noise50_jpeg102
-
-  # val5:
-  #   name: blur10_noise0_jpeg102
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur10_noise0_jpeg102
-
-  # val6:
-  #   name: blur40_noise0_jpeg102
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur40_noise0_jpeg102
-
-  # val7:
-  #   name: blur10_noise15_jpeg80
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur10_noise15_jpeg80
-
-  # val8:
-  #   name: blur40_noise50_jpeg10
-  #   mode: LQGT_cond
-  #   dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
-  #   dataroot_LQ: ../datasets/val/blur40_noise50_jpeg10
+#   val0:
+#     name: blur0_noise0_jpeg102
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur0_noise0_jpeg102
+#
+#   val1:
+#     name: blur0_noise0_jpeg80
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur0_noise0_jpeg80
+#
+#   val2:
+#     name: blur0_noise0_jpeg10
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur0_noise0_jpeg10
+#
+#   val3:
+#     name: blur0_noise15_jpeg102
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur0_noise15_jpeg102
+#
+#   val4:
+#     name: blur0_noise50_jpeg102
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur0_noise50_jpeg102
+#
+#   val5:
+#     name: blur10_noise0_jpeg102
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur10_noise0_jpeg102
+#
+#   val6:
+#     name: blur40_noise0_jpeg102
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur40_noise0_jpeg102
+#
+#   val7:
+#     name: blur10_noise15_jpeg80
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur10_noise15_jpeg80
+#
+#   val8:
+#     name: blur40_noise50_jpeg10
+#     mode: LQGT_cond
+#     cond_norm: [40, 50, 92]
+#     dataroot_GT: ../datasets/val/blur0_noise0_jpeg102
+#     dataroot_LQ: ../datasets/val/blur40_noise50_jpeg10
 
 #### network structures
 network_G:
